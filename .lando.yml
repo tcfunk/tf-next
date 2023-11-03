@@ -3,3 +3,30 @@ recipe: drupal10
 config:
   webroot: web
   php: 8.2
+
+proxy:
+  nextjs:
+    - "tf-nextjs.lndo.site:80"
+
+services:
+  nextjs:
+    api: 3
+    type: lando
+    scanner: false
+    services:
+      image: node:18
+      command: "tail -f /dev/null"
+      ports:
+        - 80
+
+tooling:
+  node:
+    service: nextjs
+    dir: /app/next-ui
+  npm:
+    service: nextjs
+    dir: /app/next-ui
+  start-client:
+    service: nextjs
+    dir: /app/next-ui
+    cmd: npm run dev -- --port 80 --hostname 0.0.0.0

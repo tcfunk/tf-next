@@ -1,0 +1,39 @@
+_core:
+  default_config_hash: VK9dbWdEM1126nBpuBIuDqy8NjjaON_YpFqPMEoLg_s
+entity_config:
+  media:
+    image:
+      enabled: true
+      query_load_enabled: true
+  node:
+    article:
+      enabled: true
+      query_load_enabled: true
+    page:
+      enabled: true
+      query_load_enabled: true
+field_config:
+  media:
+    image:
+      field_media_image:
+        enabled: true
+  node:
+    article:
+      body:
+        enabled: true
+      field_image:
+        enabled: true
+    page:
+      body:
+        enabled: true
+settings:
+  expose_entity_ids: false
+  schema_description: 'GraphQL Compose'
+  schema_version: '1'
+  simple_unions: true
+  site_name: false
+  site_slogan: false
+  site_front: true
+  svg_image: false
+  svg_filesize: 100
+  custom: {  }

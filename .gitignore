@@ -42,3 +42,6 @@ web/sites/simpletest
 
 # Ignore multi-site test environment.
 # simpletest
+next-ui/.env
+config/keys/private.key
+config/keys/public.key

@@ -1,0 +1,12 @@
+uuid: 6fb4e622-76fe-4143-835a-1f2b28d15fd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - graphql
+id: api_user
+label: 'API User'
+weight: 2
+is_admin: null
+permissions:
+  - 'execute graphql_compose_server arbitrary graphql requests'
