@@ -16,6 +16,7 @@ module:
   graphql: 0
   graphql_compose: 0
   graphql_compose_edges: 0
+  graphql_compose_routes: 0
   image: 0
   media: 0
   mysql: 0
