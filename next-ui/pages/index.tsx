@@ -1,13 +1,12 @@
 import Head from "next/head"
 import { GetStaticPropsResult } from "next"
 import { DrupalNode } from "next-drupal"
-
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
-import { NodeArticleTeaser } from "components/node--article--teaser"
+import { DrupalNodeSimplePath, NodeArticleTeaser } from "components/node--article--teaser"
 
 interface IndexPageProps {
-  nodes: DrupalNode[]
+  nodes: DrupalNodeSimplePath[]
 }
 
 export default function IndexPage({ nodes }: IndexPageProps) {
@@ -53,17 +52,11 @@ export async function getStaticProps(
             id
             title
             path
-            author {
-              displayName
-            }
             body {
               processed
             }
-            created
-            image {
-              width
-              url
-              height
+            created {
+              time
             }
           }
         }
@@ -72,19 +65,6 @@ export async function getStaticProps(
   })
 
   const { data } = await response.json()
-
-  // const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
-  //   "node--article",
-  //   context,
-  //   {
-  //     params: {
-  //       "filter[status]": 1,
-  //       "fields[node--article]": "title,path,field_image,uid,created",
-  //       include: "field_image,uid",
-  //       sort: "-created",
-  //     },
-  //   }
-  // )
 
   return {
     props: {

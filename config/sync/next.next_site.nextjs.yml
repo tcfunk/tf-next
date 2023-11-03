@@ -1,0 +1,11 @@
+uuid: bb505c0e-5def-4310-b168-2f9ca14ed555
+langcode: en
+status: true
+dependencies: {  }
+id: nextjs
+label: nextjs
+base_url: 'http://tf-nextjs.lndo.site'
+preview_url: 'http://tf-nextjs.lndo.site/api/preview'
+preview_secret: secret
+revalidate_url: ''
+revalidate_secret: ''

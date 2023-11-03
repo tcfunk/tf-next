@@ -9,9 +9,11 @@ entity_config:
     article:
       enabled: true
       query_load_enabled: true
+      edges_enabled: true
     page:
       enabled: true
       query_load_enabled: true
+      edges_enabled: true
 field_config:
   media:
     image:
