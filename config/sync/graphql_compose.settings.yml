@@ -48,6 +48,10 @@ field_config:
       field_image:
         enabled: true
         name_sdl: coverGif
+      field_link_itch:
+        enabled: true
+      field_link_steam:
+        enabled: true
 settings:
   expose_entity_ids: false
   schema_description: 'GraphQL Compose'

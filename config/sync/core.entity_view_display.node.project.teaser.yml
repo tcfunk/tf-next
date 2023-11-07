@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
     - field.field.node.project.field_image
+    - field.field.node.project.field_link_itch
+    - field.field.node.project.field_link_steam
     - node.type.project
   module:
     - media
@@ -40,4 +42,6 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_link_itch: true
+  field_link_steam: true

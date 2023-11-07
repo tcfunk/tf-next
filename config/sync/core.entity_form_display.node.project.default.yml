@@ -5,8 +5,11 @@ dependencies:
   config:
     - field.field.node.project.body
     - field.field.node.project.field_image
+    - field.field.node.project.field_link_itch
+    - field.field.node.project.field_link_steam
     - node.type.project
   module:
+    - link
     - path
     - text
 id: node.project.default
@@ -39,6 +42,22 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_link_itch:
+    type: link_default
+    weight: 124
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_steam:
+    type: link_default
+    weight: 123
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   path:
     type: path

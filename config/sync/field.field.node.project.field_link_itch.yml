@@ -1,0 +1,23 @@
+uuid: 5d29c59f-262f-4ed1-b224-920a533a4a73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_itch
+    - node.type.project
+  module:
+    - link
+id: node.project.field_link_itch
+field_name: field_link_itch
+entity_type: node
+bundle: project
+label: 'Itch.io Store Link'
+description: 'Link to the Itch.io store page for this project.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

@@ -1,0 +1,19 @@
+uuid: 6b814baf-8cf3-43c7-a071-789bd00674d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_link_steam
+field_name: field_link_steam
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
