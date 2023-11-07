@@ -1,15 +1,20 @@
 import Head from "next/head"
+import Link from "next/link"
 import { GetStaticPropsResult } from "next"
 import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
+import { Section } from "components/section"
+import SectionHeader from "components/section-header"
 import { DrupalNodeSimplePath, NodeArticleTeaser } from "components/node--article--teaser"
+import { NodeProjectTeaser } from "components/node--project--teaser"
 
 interface IndexPageProps {
-  nodes: DrupalNodeSimplePath[]
+  articles: DrupalNodeSimplePath[],
+  projects: DrupalNodeSimplePath[],
 }
 
-export default function IndexPage({ nodes }: IndexPageProps) {
+export default function IndexPage({ articles, projects }: IndexPageProps) {
   return (
     <Layout>
       <Head>
@@ -19,19 +24,40 @@ export default function IndexPage({ nodes }: IndexPageProps) {
           content="A Next.js site powered by a Drupal backend."
         />
       </Head>
-      <div>
-        <h1 className="mb-10 text-6xl font-black">Latest Articles.</h1>
-        {nodes?.length ? (
-          nodes.map((node) => (
-            <div key={node.id}>
-              <NodeArticleTeaser node={node} />
-              <hr className="my-20" />
-            </div>
-          ))
-        ) : (
-          <p className="py-4">No nodes found</p>
-        )}
-      </div>
+
+      <Section>
+        <SectionHeader type={"Projects"} />
+        
+        <div className="flex flex-col gap-6" suppressHydrationWarning>
+          {projects?.length ? (
+            projects.map(({node}) => (
+              <Link key={node.id} href={node.path}>
+                <NodeProjectTeaser node={node} />
+              </Link>
+            ))
+            ) : (
+              <p className="py-4">Nothing here yet</p>
+            )
+          }
+        </div>
+      </Section>
+      
+      <Section>
+        <SectionHeader type={"Posts"} />
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {articles?.length ? (
+            articles.map((node) => (
+              <Link key={node.id} href={node.path} className="hover:translate-y-1">
+                <NodeArticleTeaser node={node} />
+              </Link>
+            ))
+          ) : (
+            <p className="py-4">Nothing here yet</p>
+          )}
+        </div>
+      </Section>
+
     </Layout>
   )
 }
@@ -47,7 +73,7 @@ export async function getStaticProps(
     withAuth: true,
     body: JSON.stringify({ query: `
       query {
-        nodeArticles(first: 10) {
+        nodeArticles(first: 3) {
           nodes {
             id
             title
@@ -57,6 +83,39 @@ export async function getStaticProps(
             }
             created {
               time
+            }
+            image {
+              ... on MediaImage {
+                id
+                name
+                mediaImage {
+                  url
+                  alt
+                }
+              }
+            }
+          }
+        }
+        nodeProjects(first: 3) {
+          edges {
+            node {
+              body {
+                summary
+              }
+              id
+              path
+              title
+              coverGif {
+                ... on MediaGif {
+                  id
+                  mediaGif {
+                    url
+                    alt
+                    height
+                    width
+                  }
+                }
+              }
             }
           }
         }
@@ -68,7 +127,8 @@ export async function getStaticProps(
 
   return {
     props: {
-      nodes: data?.nodeArticles?.nodes ?? []
+      articles: data?.nodeArticles?.nodes ?? [],
+      projects: data?.nodeProjects?.edges ?? [],
     },
   }
 }

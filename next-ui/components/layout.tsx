@@ -4,26 +4,50 @@ import { PreviewAlert } from "components/preview-alert"
 
 export function Layout({ children }) {
   return (
-    <>
+    <body className="bg-slate-900 text-gray-100">
       <PreviewAlert />
-      <div className="max-w-screen-md px-6 mx-auto">
-        <header>
-          <div className="container flex items-center justify-between py-6 mx-auto">
-            <Link href="/" className="text-2xl font-semibold no-underline">
-              Next.js for Drupal
-            </Link>
-            <Link
-              href="https://next-drupal.org/docs"
-              target="_blank"
-              rel="external"
-              className="hover:text-blue-600"
-            >
-              Read the docs
-            </Link>
-          </div>
-        </header>
-        <main className="container py-10 mx-auto">{children}</main>
-      </div>
-    </>
+      
+      <header>
+        <div className="container flex items-center justify-between py-6 mx-auto">
+          <Link href="/" className="text-2xl font-semibold no-underline">
+            Tyler's Blog
+          </Link>
+          <nav>
+            <ul className="flex gap-x-3">
+              <li>
+                <Link
+                  href="/blog"
+                  className="hover:text-blue-600"
+                >
+                  Blog
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/projects"
+                  className="hover:text-blue-600"
+                >
+                  Projects
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-blue-600"
+                >
+                  Contact
+                </Link>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>{children}</main>
+      
+    </body>
   )
 }

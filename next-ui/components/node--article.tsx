@@ -40,7 +40,7 @@ export function NodeArticle({ node, ...props }: NodeArticleProps) {
       {node.body?.processed && (
         <div
           dangerouslySetInnerHTML={{ __html: node.body?.processed }}
-          className="mt-6 font-serif text-xl leading-loose prose"
+          className="mt-6 font-sans text-xl leading-loose prose prose-invert"
         />
       )}
     </article>

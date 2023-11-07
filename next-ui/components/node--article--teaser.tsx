@@ -17,48 +17,36 @@ export interface DrupalNodeSimplePath extends JsonApiResource {
     default_langcode: boolean;
     sticky: boolean;
     path?: string;
+    body?: any;
 }
 
 interface NodeArticleTeaserProps {
-  node: DrupalNodeSimplePath
+  node: DrupalNodeSimplePath;
 }
 
 export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
   return (
-    <article {...props}>
-      <Link href={node.path} className="no-underline hover:text-blue-600">
-        <h2 className="mb-4 text-4xl font-bold">{node.title}</h2>
-      </Link>
-      <div className="mb-4 text-gray-600">
-        <span suppressHydrationWarning> - {formatDate(node.created.time)}</span>
-      </div>
-      {/* {node.field_image && (
-        <figure className="my-4">
+    <article {...props} className="overflow-hidden rounded-md bg-slate-800" >
+      
+        <div className="aspect-w-3 aspect-h-2">
           <Image
-            src={absoluteUrl(node.field_image.uri.url)}
+            className="h-full w-full object-cover object-center"
+            src={node.image.mediaImage.url}
             width={768}
             height={480}
-            alt={node.field_image.resourceIdObjMeta.alt}
-          />
-        </figure>
-      )} */}
-      <Link
-        href={node.path}
-        className="inline-flex items-center px-6 py-2 border border-gray-600 rounded-full hover:bg-gray-100"
-      >
-        Read article
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4 h-4 ml-2"
-        >
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </Link>
+            alt={node.image.mediaImage.alt} />
+        </div>
+
+        <div className="px-3 pt-4 pb-6 text-center">
+          <h2 className="text-xl font-semibold">{node.title}</h2>
+          <div className="mt-1 text-xs text-gray-400">
+            {formatDate(node.created.time)}
+          </div>
+          <div className="mt-2 text-sm">
+            Read article
+          </div>
+        </div>
+      
     </article>
   )
 }
