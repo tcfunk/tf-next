@@ -8,6 +8,10 @@ interface DrupalTimestamp {
   time: string
 }
 
+interface Link {
+  url: string;
+}
+
 export interface DrupalNodeSimplePath extends JsonApiResource {
     drupal_internal__nid: number;
     drupal_internal__vid: number;
@@ -18,6 +22,8 @@ export interface DrupalNodeSimplePath extends JsonApiResource {
     sticky: boolean;
     path?: string;
     body?: any;
+    linkSteam?: Link;
+    linkItch?: Link;
 }
 
 interface NodeArticleTeaserProps {

@@ -3,7 +3,8 @@ const nextConfig = {
   images: {
     domains: [
       process.env.NEXT_IMAGE_DOMAIN,
-      'localhost',
+      "partner.steamgames.com",
+      "tf-next.lndo.site",
     ],
   },
 }

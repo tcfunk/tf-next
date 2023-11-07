@@ -1,7 +1,6 @@
 import Head from "next/head"
 import Link from "next/link"
 import { GetStaticPropsResult } from "next"
-import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
 import { Section } from "components/section"
@@ -31,9 +30,7 @@ export default function IndexPage({ articles, projects }: IndexPageProps) {
         <div className="flex flex-col gap-6" suppressHydrationWarning>
           {projects?.length ? (
             projects.map(({node}) => (
-              <Link key={node.id} href={node.path}>
-                <NodeProjectTeaser node={node} />
-              </Link>
+              <NodeProjectTeaser key={node.id} node={node} />
             ))
             ) : (
               <p className="py-4">Nothing here yet</p>
@@ -105,6 +102,12 @@ export async function getStaticProps(
               id
               path
               title
+              linkItch {
+                url
+              }
+              linkSteam {
+                url
+              }
               coverGif {
                 ... on MediaGif {
                   id
