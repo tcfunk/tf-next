@@ -39,21 +39,23 @@ export default function IndexPage({ articles, projects }: IndexPageProps) {
         </div>
       </Section>
       
-      <Section>
-        <SectionHeader type={"Posts"} />
+      {articles?.length > 0 && (
+        <Section>
+          <SectionHeader type={"Posts"} />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {articles?.length ? (
-            articles.map((node) => (
-              <Link key={node.id} href={node.path} className="hover:translate-y-1">
-                <NodeArticleTeaser node={node} />
-              </Link>
-            ))
-          ) : (
-            <p className="py-4">Nothing here yet</p>
-          )}
-        </div>
-      </Section>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {articles?.length ? (
+              articles.map((node) => (
+                <Link key={node.id} href={node.path} className="hover:translate-y-1">
+                  <NodeArticleTeaser node={node} />
+                </Link>
+              ))
+            ) : (
+              <p className="py-4">Nothing here yet</p>
+            )}
+          </div>
+        </Section>
+      )}
 
     </Layout>
   )
