@@ -2,6 +2,9 @@ _core:
   default_config_hash: VK9dbWdEM1126nBpuBIuDqy8NjjaON_YpFqPMEoLg_s
 entity_config:
   media:
+    gif:
+      enabled: true
+      query_load_enabled: true
     image:
       enabled: true
       query_load_enabled: true
@@ -16,8 +19,17 @@ entity_config:
       query_load_enabled: true
       edges_enabled: true
       routes_enabled: true
+    project:
+      enabled: true
+      query_load_enabled: true
+      edges_enabled: true
+      routes_enabled: true
 field_config:
   media:
+    gif:
+      field_media_image:
+        enabled: true
+        name_sdl: mediaGif
     image:
       field_media_image:
         enabled: true
@@ -30,6 +42,12 @@ field_config:
     page:
       body:
         enabled: true
+    project:
+      body:
+        enabled: true
+      field_image:
+        enabled: true
+        name_sdl: coverGif
 settings:
   expose_entity_ids: false
   schema_description: 'GraphQL Compose'

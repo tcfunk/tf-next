@@ -1,0 +1,31 @@
+uuid: eb063cd6-a37b-4da6-84a0-9412004b17a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.gif.field_media_image
+    - image.style.large
+    - media.type.gif
+  module:
+    - image
+id: media.gif.default
+targetEntityType: media
+bundle: gif
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true
