@@ -6,8 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif']
+      sans: ['Inter', 'sans-serif'],
+      serif: ['Fjalla One', 'serif']
     },
     extend: { },
   },

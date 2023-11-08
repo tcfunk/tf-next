@@ -32,7 +32,7 @@ interface NodeArticleTeaserProps {
 
 export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
   return (
-    <article {...props} className="overflow-hidden rounded-md bg-slate-800" >
+    <article {...props} className="overflow-hidden rounded-md bg-zinc-800" >
       
         <div className="aspect-w-3 aspect-h-2">
           <Image
@@ -44,11 +44,11 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
         </div>
 
         <div className="px-3 pt-4 pb-6 text-center">
-          <h2 className="text-xl font-semibold">{node.title}</h2>
+          <h2 className="text-3xl font-serif">{node.title}</h2>
           <div className="mt-1 text-xs text-gray-400">
             {formatDate(node.created.time)}
           </div>
-          <div className="mt-2 text-sm">
+          <div className="mt-2">
             Read article
           </div>
         </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { DrupalNodeSimplePath } from "./node--article--teaser";
 import ItchLogo from "./itch-logo";
-import GradientText from "./gradient-text";
+import SteamLogo from "./steam-logo";
 
 interface NodeProjectTeaserProps {
   node: DrupalNodeSimplePath
@@ -10,10 +10,11 @@ interface NodeProjectTeaserProps {
 
 export function NodeProjectTeaser({ node, ...props }: NodeProjectTeaserProps) {
   return (
-    <div className="flex flex-col items-center gap-x-8 overflow-hidden rounded-md bg-slate-800 md:flex-row">
+    <div className="flex flex-col md:items-center items-stretch gap-x-8 overflow-hidden rounded-md bg-zinc-800 md:flex-row">
       <div className="shrink-0">
         <Link href={node.path}>
           <Image
+            className="h-full w-full md:h-auto md:w-auto object-cover md:object-none object-center"
             src={node.coverGif.mediaGif.url}
             alt={node.coverGif.mediaGif.alt}
             height={node.coverGif.mediaGif.height}
@@ -21,23 +22,19 @@ export function NodeProjectTeaser({ node, ...props }: NodeProjectTeaserProps) {
             suppressHydrationWarning />
         </Link>
       </div>
-      <div>
+      <div className="m-8">
         <div className="flex flex-col items-center gap-y-2 md:flex-row">
-          <Link href={node.path} className="text-2xl font-semibold transition-colors hover:text-cyan-400">{node.title}</Link>
+          <Link href={node.path} className="text-4xl transition-colors hover:text-amber-400 font-serif">{node.title}</Link>
           <div className="ml-3 flex gap-2">
             {node.linkSteam && (
-              <div className="px-2 py-1 text-xs font-semibold">
-                  <Link href={node.linkSteam.url} target="_blank" rel="external">
-                    <Image
-                      src="https://partner.steamgames.com/public/images/steam_logo_white_small.png"
-                      alt="Steam store page"
-                      height="20"
-                      width="60" />
+              <div className="px-2 py-1">
+                  <Link href={node.linkSteam.url} target="_blank" rel="external" className="text-white hover:text-cyan-500">
+                    <SteamLogo />
                   </Link>
               </div>
             )}
             {node.linkItch && (
-              <div className="px-2 py-1 text-xs font-semibold">
+              <div className="px-2 py-1">
                 <Link href={node.linkItch.url} target="_blank" rel="external">
                   <ItchLogo />
                 </Link>
