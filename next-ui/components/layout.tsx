@@ -12,7 +12,7 @@ export function Layout({ children }) {
       <Section>
         <div className="flex flex-col gap-y-3 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="text-2xl no-underline font-serif">
-            <GradientText>Tyler's Blog</GradientText>
+            <GradientText>Tyler&apos;s Blog</GradientText>
           </Link>
 
           <nav>
