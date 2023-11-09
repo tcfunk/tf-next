@@ -1,0 +1,11 @@
+uuid: d8f4fd70-e785-4636-baad-3f743d9d5c73
+langcode: en
+status: true
+dependencies: {  }
+id: node.project
+site_resolver: site_selector
+configuration:
+  sites:
+    nextjs: nextjs
+revalidator: ''
+revalidator_configuration: {  }

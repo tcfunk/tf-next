@@ -6,16 +6,18 @@ config:
 
 proxy:
   nextjs:
-    - "tf-nextjs.lndo.site:80"
+    - next.lndo.site:80
 
 services:
   nextjs:
     api: 3
     type: lando
     scanner: false
+    build:
+      - cd next-ui
     services:
       image: node:18
-      command: "tail -f /dev/null"
+      command: "yarn dev --port 80 --hostname 0.0.0.0"
       ports:
         - 80
 

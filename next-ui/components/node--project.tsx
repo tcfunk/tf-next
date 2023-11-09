@@ -1,11 +1,11 @@
 import { DrupalNodeSimplePath } from "./node--article--teaser"
 import { Section } from "./section"
 
-interface NodeArticleProps {
+interface NodeProjectProps {
   node: DrupalNodeSimplePath
 }
 
-export function NodeArticle({ node, ...props }: NodeArticleProps) {
+export function NodeProject({ node, ...props }: NodeProjectProps) {
   return (
     <Section {...props}>
       <h1 className="text-center text-3xl font-serif">{node.title}</h1>

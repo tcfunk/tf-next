@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 id: nextjs
 label: nextjs
-base_url: 'http://localhost:33191/'
-preview_url: 'http://localhost:33191/api/preview'
-preview_secret: secret
+base_url: 'http://next.lndo.site'
+preview_url: 'http://next.lndo.site/api/preview'
+preview_secret: secret_secret
 revalidate_url: 'http://localhost:33191/api/revalidate'
 revalidate_secret: secret
