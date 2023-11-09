@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Script from "next/script"
 
 import { PreviewAlert } from "components/preview-alert"
 import { Section } from "./section"
@@ -36,6 +37,12 @@ export function Layout({ children }) {
 
       <main>{children}</main>
       
+      <Script
+        data-goatcounter="https://tcfunk.goatcounter.com/count"
+        src="//gc.zgo.at/count.js"
+        strategy="lazyOnload"
+        onLoad={() => console.log(`script loaded`)}
+      />
     </body>
   )
 }
