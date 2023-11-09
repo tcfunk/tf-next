@@ -1,0 +1,43 @@
+uuid: 44537005-8196-472e-8af6-e56638c5a1e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+name: 'Full HTML'
+format: full_html
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<span class="bg-gradient-to-br from-orange-400 to-amber-400 bg-clip-text text-transparent">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        default: default
+      allowed_media_types:
+        gif: gif
+        image: image
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 15
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
