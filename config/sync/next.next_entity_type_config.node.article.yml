@@ -6,6 +6,7 @@ id: node.article
 site_resolver: site_selector
 configuration:
   sites:
+    localhost: localhost
     nextjs: nextjs
   field_name: {  }
 revalidator: path

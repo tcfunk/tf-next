@@ -1,0 +1,11 @@
+uuid: b6fc740a-c5d3-4fb4-bb1f-a8875cdeb3eb
+langcode: en
+status: true
+dependencies: {  }
+id: localhost
+label: localhost
+base_url: 'http://localhost:3000'
+preview_url: 'http://localhost:3000/api/preview'
+preview_secret: secret_secret
+revalidate_url: ''
+revalidate_secret: ''

@@ -6,6 +6,7 @@ id: node.page
 site_resolver: site_selector
 configuration:
   sites:
+    localhost: localhost
     nextjs: nextjs
 revalidator: path
 revalidator_configuration:
