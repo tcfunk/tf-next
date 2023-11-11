@@ -58,10 +58,3 @@ export default function HomepageHero() {
     </div>
   )
 }
-
-export async function getStaticProps(context): Promise<GetStaticPropsResult<HomepageHeroProps>> {
-  return {
-    props: {
-    }
-  }
-}
