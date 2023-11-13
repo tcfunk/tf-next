@@ -39,8 +39,8 @@ export default function HomepageHero() {
         <h1 className="text-3xl font-bold">Hi there, I'm <GradientText>Tyler</GradientText> 👋</h1>
         <p className="mt-6 text-xl leading-9">I'm a parent, a creator, a biker. The hardest thing is trying to live up to one's own expectations.</p>
         <div className="mt-3 flex gap-1">
-          {heroProps.socialLinks.map(socialLink => (
-            <Link href={socialLink.url}>
+          {heroProps.socialLinks.map((socialLink, i) => (
+            <Link id={i.toString()} href={socialLink.url}>
               <SocialIcon icon={socialLink.icon} />
             </Link>
           ))}
