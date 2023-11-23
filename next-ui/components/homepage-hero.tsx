@@ -36,8 +36,8 @@ export default function HomepageHero() {
   return (
     <div className="flex flex-col items-center md:flex-row md:justify-between md:gap-x-24">
       <div>
-        <h1 className="text-3xl font-bold">Hi there, I'm <GradientText>Tyler</GradientText> 👋</h1>
-        <p className="mt-6 text-xl leading-9">I'm a parent, a creator, a biker. The hardest thing is trying to live up to one's own expectations.</p>
+        <h1 className="text-3xl font-bold">Hi there, I&apos;m <GradientText>Tyler</GradientText> 👋</h1>
+        <p className="mt-6 text-xl leading-9">I&apos;m a parent, a creator, a biker. The hardest thing is trying to live up to one&apos;s own expectations.</p>
         <div className="mt-3 flex gap-1">
           {heroProps.socialLinks.map((socialLink, i) => (
             <Link id={i.toString()} href={socialLink.url}>
