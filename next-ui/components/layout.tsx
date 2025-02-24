@@ -1,8 +1,10 @@
-import Link from "next/link"
 import Script from "next/script"
 
 import { PreviewAlert } from "components/preview-alert"
 import { Section } from "./section"
+import ContactForm from "./contact-form"
+import HomepageHero from "./homepage-hero"
+import Link from "next/link"
 import GradientText from "./gradient-text"
 
 export function Layout({ children }) {
@@ -13,7 +15,7 @@ export function Layout({ children }) {
       <Section>
         <div className="flex flex-col gap-y-3 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="text-2xl no-underline font-serif">
-            <GradientText>Tyler&apos;s Blog</GradientText>
+            <GradientText>a furtive space</GradientText>
           </Link>
 
           <nav>
@@ -35,7 +37,21 @@ export function Layout({ children }) {
         </div>
       </Section>
 
+      <Section>
+        <HomepageHero />
+      </Section>
+
       <main>{children}</main>
+
+      <Section>
+        <ContactForm />
+      </Section>
+
+      <Section>
+        <div className="border-t border-gray-600 pt-6">
+          <div className="text-sm text-gray-200">&copy; {(new Date()).getFullYear()} Tyler Funk.</div>
+        </div>
+      </Section>
       
       <Script
         data-goatcounter="https://tcfunk.goatcounter.com/count"
