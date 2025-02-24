@@ -23,6 +23,7 @@ settings:
       - link
       - blockQuote
       - '|'
+      - drupalMedia
       - sourceEditing
   plugins:
     ckeditor5_codeBlock:
@@ -87,5 +88,5 @@ settings:
           label: 'Gradient Text'
           element: '<span class="bg-gradient-to-br from-orange-400 to-amber-400 bg-clip-text text-transparent">'
     media_media:
-      allow_view_mode_override: false
+      allow_view_mode_override: true
 image_upload: {  }

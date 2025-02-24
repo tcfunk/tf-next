@@ -1,0 +1,11 @@
+uuid: 3f0d0829-e4d9-413f-a660-0b9e40c73cb9
+langcode: en
+status: true
+dependencies: {  }
+id: vercel
+label: vercel
+base_url: 'https://tf-next-hzus.vercel.app'
+preview_url: 'https://tf-next-hzus.vercel.app/api/preview'
+preview_secret: secret
+revalidate_url: ''
+revalidate_secret: ''

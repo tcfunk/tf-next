@@ -8,5 +8,6 @@ configuration:
   sites:
     localhost: localhost
     nextjs: nextjs
+    vercel: vercel
 revalidator: ''
 revalidator_configuration: {  }

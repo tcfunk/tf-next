@@ -6,10 +6,12 @@ id: node.article
 site_resolver: site_selector
 configuration:
   sites:
-    localhost: localhost
-    nextjs: nextjs
+    w1_demo: w1_demo
+    localhost: '0'
+    nextjs: '0'
+    vercel: '0'
   field_name: {  }
 revalidator: path
 revalidator_configuration:
   revalidate_page: true
-  additional_paths: ''
+  additional_paths: /

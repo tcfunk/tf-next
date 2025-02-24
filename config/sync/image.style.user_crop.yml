@@ -1,0 +1,15 @@
+uuid: 2211509b-d18d-4c9b-a75c-b3acbd17424d
+langcode: en
+status: true
+dependencies: {  }
+name: user_crop
+label: 'user crop'
+effects:
+  95495aa7-ff76-4c31-bc09-760ccc9057c5:
+    uuid: 95495aa7-ff76-4c31-bc09-760ccc9057c5
+    id: image_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 768
+      anchor: center-center

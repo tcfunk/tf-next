@@ -18,11 +18,14 @@ module:
   graphql_compose_edges: 0
   graphql_compose_routes: 0
   image: 0
+  jsonapi: 0
   link: 0
   media: 0
+  media_library: 0
   mysql: 0
   next: 0
   next_graphql: 0
+  next_jsonapi: 0
   node: 0
   page_cache: 0
   path: 0
@@ -38,6 +41,7 @@ module:
   update: 0
   user: 0
   pathauto: 1
+  views: 10
   minimal: 1000
 theme:
   stark: 0

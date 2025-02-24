@@ -1,0 +1,11 @@
+uuid: 26f9e755-5a57-4e45-8dba-0e8f60902821
+langcode: en
+status: true
+dependencies: {  }
+id: w1_demo
+label: 'W1 Demo'
+base_url: 'https://next-blog-poc-pi.vercel.app'
+preview_url: 'https://next-blog-poc-pi.vercel.app/api/draft'
+preview_secret: secret
+revalidate_url: 'https://next-blog-poc-pi.vercel.app/api/revalidate'
+revalidate_secret: secret

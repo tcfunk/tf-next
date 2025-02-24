@@ -2,6 +2,8 @@ uuid: 44537005-8196-472e-8af6-e56638c5a1e8
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.full
   module:
     - media
 name: 'Full HTML'
@@ -26,6 +28,7 @@ filters:
       default_view_mode: default
       allowed_view_modes:
         default: default
+        full: full
       allowed_media_types:
         gif: gif
         image: image
@@ -40,4 +43,10 @@ filters:
     provider: filter
     status: true
     weight: 10
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 0
     settings: {  }
